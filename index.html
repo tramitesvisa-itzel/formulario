@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Solicitud</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="app.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <img src="client_ico_256.ico" alt="Icono" class="icon">
+                <img src="logo.png" alt="Logotipo">
+            </div>
+            <h1>Información y documentos para llenado de formatos </h1>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#instrucciones">Instrucciones</a></li>
+            <li><a href="#formulario">Formulario</a></li>
+            <li><a href="https://wa.me/6643750913" target="_blank">Enviar WhatsApp</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section id="instrucciones">
+                <h1>Manual de Uso del Formulario de Información y Documentos</h1>
+                <section>
+                    <h2>Instrucciones Generales.</h2>
+                    <p></p>
+                </section>
+                <section>
+                    <h2>Pasos para Usar el Formulario</h2>
+                    <ol>
+                        <li><strong>Leer Instrucciones Iniciales</strong> y hacer clic en <strong>"Continuar"</strong>.
+                        </li>
+                        <li><strong>Seleccionar Tipo de Solicitud:</strong> <strong>Primera Vez</strong> o
+                            <strong>Renovación</strong>.
+                        </li>
+                    </ol>
+                    <h2>Formulario de (primera vez o renovación)</h2>
+                    <p><strong>Secciones:</strong></p>
+                    <ul>
+                        <li>Contacto</li>
+                        <li>Datos Personales</li>
+                        <li>Datos AcadémicosDatos</li>
+                        <li>Empleo Anterior</li>
+                        <li>Datos De los Padres</li>
+                        <li>Información Adicional</li>
+                        <li>Foto de Documentos Oficiales</li>
+                    </ul>
+                    <p>Haz clic en <strong>"Enviar"</strong> al finalizar.</p>
+                </section>
+                <section>
+                    <h2>Notas Importantes</h2>
+                    <ul>
+                        <li>La información es confidencial.</li>
+                        <li>Completa todos los campos obligatorios.</li>
+                        <li>La gestora puede modificar información para aumentar la probabilidad de aprobación de la
+                            visa y te informará de estos cambios.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Contacto y Soporte</h2>
+                    <p>Para dudas o asistencia, envía un mensaje a través de WhatsApp: <a
+                            href="https://wa.me/6643750913" target="_blank">Enviar WhatsApp</a>.</p>
+                </section>
+                <button id="btn-continuar">Continuar</button>
+            </section>
+
+            <section id="seleccion-tipo" style="display: none;">
+                <div class="container">
+                    <div class="header">
+                        <h2>Seleccionar Tipo de Solicitud</h2>
+                        <label for="tipo-solicitud">Tipo de Solicitud:</label>
+                        <select id="tipo-solicitud" onchange="mostrarSecciones()">
+                            <option value="nada"></option>
+                            <option value="Primera_Vez">Primera vez</option>
+                            <option value="Renovacion">Renovación</option>
+                        </select>
+                    </div>
+                </div>
+                <hr class="divider">
+                <br>
+
+
+
+
+                <div id="seccion-primera-vez" style="display:none;">
+                    <form id="dataForm">
+                        <div id="seccion-renovacion" class="calendar-container" style="display:none;">
+                            <div class="single-line">
+                                <div>
+                                    <label for="fecha-ultima-visita">Fecha última visita a USA:</label>
+                                    <input type="date" id="fecha-ultima-visita">
+                                </div>
+                                <div>
+                                    <label for="duracion-usa">Duración en USA:</label>
+                                    <select id="duracion-usa">
+                                        <option value="dias">Días</option>
+                                        <option value="meses">Meses</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                            <hr class="divider">
+                            <!-- Resto del formulario... -->
+                            <!-- <button type="button" class="btn-siguiente" data-next="seccion-primera-vez">Siguiente</button> -->
+                        </div>
+
+
+
+                        <h2>Registro teléfono y correo</h2>
+                        <div>
+                            <label for="telefono">Número telefónico:</label>
+                            <input type="tel" id="telefono">
+                        </div>
+                        <div class="single-line">
+                            <div>
+                                <label for="email">Correo electrónico (opcional):</label>
+                                <input type="email" id="email">
+                            </div>
+                        </div>
+                        <hr class="divider">
+                        <button type="button" class="btn-siguiente" data-next="seccion2">Siguiente</button>
+                </div>
+                <div id="seccion2" style="display: none;">
+                    <h3>Sección 2</h3>
+                    <h2>Datos Personales</h2>
+                    <div class="single-line">
+                        <div>
+                            <label for="apellido-paterno">Apellido paterno:</label>
+                            <input type="text" id="apellido-paterno">
+                        </div>
+                        <hr class="divider">
+                        <div>
+                            <label for="apellido-materno">Apellido materno:</label>
+                            <input type="text" id="apellido-materno">
+                        </div>
+                    </div>
+                    <div class="single-line">
+                        <div>
+                            <label for="nombres">Nombres:</label>
+                            <input type="text" id="nombres">
+                        </div>
+                    </div>
+                    <div class="single-line">
+                        <div>
+                            <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+                            <input type="date" id="fecha-nacimiento">
+                        </div>
+                        <hr class="divider">
+                        <div>
+                            <span>Sexo:</span>
+                            <br>
+                            <input type="radio" id="sexo-masculino" name="sexo" value="masculino">
+                            <label for="sexo-masculino">Masculino</label>
+                            <input type="radio" id="sexo-femenino" name="sexo" value="femenino">
+                            <label for="sexo-femenino">Femenino</label>
+                        </div>
+                        <hr class="divider">
+                    </div>
+                    <div class="single-line">
+                        <div>
+                            <label for="lugar-nacimiento">Lugar de nacimiento:</label>
+                            <input type="text" id="lugar-nacimiento">
+                        </div>
+                    </div>
+                    <br>
+                    <hr class="divider">
+                    <hr class="divider">
+                    <br>
+                    <div id="seccion2-2">
+                        <section>
+                            <h3>Sección 2-2</h3>
+                            <h2>(Datos de cónyuge)</h2>
+                            <!-- Contenido de la sección 2-2 aquí -->
+
+                            <div class="single-line">
+                                <div>
+                                    <label for="nombres-conyuge">Nombre Completo de Esposa:</label>
+                                    <input type="text" id="nombres-conyuge">
+                                </div>
+                            </div>
+                            <div class="single-line">
+                                <div>
+                                    <label for="fecha-nacimiento-conyuge">Fecha de nacimiento:</label>
+                                    <input type="date" id="fecha-nacimiento-conyuge">
+                                </div>
+                                <hr class="divider">
+                                <div>
+                                    <label for="lugar-nacimiento-conyuge">Lugar de nacimiento:</label>
+                                    <input type="text" id="lugar-nacimiento-conyuge">
+                                </div>
+                            </div>
+                            <hr class="divider">
+                            <hr class="divider">
+
+                        </section>
+                    </div>
+                    <div class="form-item">
+                        <div>
+                            <span>Estado civil:</span>
+
+                            <input type="radio" id="estado-civil-casado" name="estado-civil" value="casado">
+                            <label for="estado-civil-casado">Casado</label>
+
+                            <input type="radio" id="estado-civil-soltero" name="estado-civil" value="soltero">
+                            <label for="estado-civil-soltero">Soltero</label>
+
+                            <input type="radio" id="estado-civil-viudo" name="estado-civil" value="viudo">
+                            <label for="estado-civil-viudo">Viudo</label>
+
+                            <input type="radio" id="estado-civil-divorciado" name="estado-civil" value="divorciado">
+                            <label for="estado-civil-divorciado">Divorciado</label>
+
+                            <input type="radio" id="estado-civil-separado" name="estado-civil" value="separado">
+                            <label for="estado-civil-separado">Separado</label>
+                            <input type="radio" id="estado-civil-union-libre" name="estado-civil" value="union-libre">
+                            <label for="estado-civil-union-libre">Unión libre</label>
+
+                        </div>
+                    </div>
+                    <br>
+
+                    <hr class="divider">
+                    <button type="button" class="btn-atras" data-previous="container">Atrás</button>
+                    <button type="button" class="btn-siguiente" data-next="seccion3">Siguiente</button>
+                </div>
+
+                <div id="seccion3" style="display: none;">
+                    <h3>Sección 3</h3>
+                    <!-- SECCION 3: Datos Académicos -->
+                    <h2>Datos Académicos</h2>
+                    <br>
+                    <div class="form-item">
+                        <div class="single-line">
+                            <div>
+                                <label for="escolaridad">Escolaridad:</label>
+                                <select id="escolaridad">
+                                    <option value=""></option>
+                                    <option value="primaria">Primaria</option>
+                                    <option value="secundaria">Secundaria</option>
+                                    <option value="preparatoria">Preparatoria</option>
+                                    <option value="universidad">Universidad</option>
+                                    <option value="posgrado">Posgrado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <label>Nombre De Escuela: <span class="required">*</span></label>
+                        <input type="text" id="nombre-escuela"
+                            placeholder="Universidad Nacional Autónoma de México (UNAM)" required>
+                        <small>Ejemplo: Universidad Nacional Autónoma de México (UNAM)</small>
+                    </div>
+                    <div class="form-item">
+                        <label>Dirección De Escuela: <span class="required">*</span></label>
+                        <input type="text" id="direccion-escuela"
+                            placeholder="Av. Universidad 3000, C.U., Coyoacán, 04510 Ciudad de México, CDMX, México"
+                            required>
+                        <small>Ejemplo: Av. Universidad 3000, C.U., Coyoacán, 04510 Ciudad de México, CDMX,
+                            México</small>
+                    </div>
+                    <div class="single-line">
+                        <div>
+                            <label>Fecha Inicio: <span class="required">*</span></label>
+                            <input type="date" id="fecha-inicio" required>
+                            <small>Ejemplo: 2022-01-01</small>
+                        </div>
+                        <hr class="divider">
+                        <div>
+                            <label>Fecha Final: <span class="required">*</span></label>
+                            <input type="date" id="fecha-fin" required>
+                            <small>Ejemplo: 2022-12-31</small>
+                        </div>
+                    </div>
+                    <br>
+
+                    <hr class="divider">
+                    <button type="button" class="btn-atras" data-previous="seccion2">Atrás</button>
+                    <button type="button" class="btn-siguiente" data-next="seccion4">Siguiente</button>
+                </div>
+
+
+
+                <div id="seccion4" style="display: none;">
+                    <h3>Sección 4</h3>
+                    <!-- SECCION 4: Empleo Actual y Anteriores -->
+                    <h2>Empleo Actual</h2>
+                    <br>
+                    <div class="single-line">
+                        <div>
+                            <label>Nombre De Empresa: <span class="required">*</span></label>
+                            <input type="text" id="nombre-empresa" placeholder="Empresa XYZ" required>
+                            <small>Ejemplo: Empresa XYZ</small>
+                        </div>
+                    </div>
+                    <div class="single-line">
+                        <div> <label>Domicilio De Empresa: <span class="required">*</span></label>
+                            <input type="text" id="domicilio-trabajo" placeholder="Calle Falsa 123, Ciudad, CP 45678"
+                                required>
+                            <small>Ejemplo: Calle Falsa 123, Ciudad, CP 45678</small>
+                        </div>
+                    </div>
+
+                    <div class="single-line">
+                        <div>
+                            <label>Fecha Inicio: <span class="required">*</span></label>
+                            <input type="date" id="fecha-inicio-trabajo" required>
+                            <small>Ejemplo: 2022-01-01</small>
+                        </div>
+                        <hr class="divider">
+                        <div>
+                            <label>Teléfono: <span class="required">*</span></label>
+                            <input type="text" id="telefono-trabajo" placeholder="55-1234-5678" required>
+                            <small>Ejemplo: 55-1234-5678</small>
+                        </div>
+                        <hr class="divider">
+                        <div>
+                            <label>Salario Mensual: <span class="required">*</span></label>
+                            <input type="text" id="salario" placeholder="$10000" required>
+                            <small>Ejemplo: $10000</small>
+                        </div>
+
+                    </div>
+
+                    <hr class="divider">
+                    <button type="button" class="btn-atras" data-previous="seccion3">Atrás</button>
+                    <button type="button" class="btn-siguiente" data-next="seccion5">Siguiente</button>
+                </div>
+
+
+                <hr class="divider">
+                <hr class="divider">
+                <br>
+                <hr class="divider">
+
+
+                <div id="seccion5" style="display: none;">
+                    <h3>Sección 5</h3>
+                    <!-- SECCION 5:Anteriores -->
+                    <h2>Empleos Anteriores</h2>
+
+
+
+
+                    <br>
+                    <div class="single-line">
+                        <div>
+                            <label>Nombre De Empresa: <span class="required">*</span></label>
+                            <input type="text" id="nombre-empresa-anterior" placeholder="Empresa Anterior XYZ" required>
+                            <small>Ejemplo: Empresa Anterior XYZ</small>
+                        </div>
+                        <hr class="divider">
+                        <div>
+                            <label>Salario Mensual: <span class="required">*</span></label>
+                            <input type="text" id="salario-anterior" placeholder="$8000" required>
+                            <small>Ejemplo: $8000</small>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="single-line">
+                        <div>
+                            <label>Domicilio De Empresa: <span class="required">*</span></label>
+                            <input type="text" id="domicilio-trabajo-anterior"
+                                placeholder="Calle Anterior 123, Ciudad, CP 45678" required>
+                            <small>Ejemplo: Calle Anterior 123, Ciudad, CP 45678</small>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="single-line">
+
+                        <div>
+                            <label>Fecha Inicio: <span class="required">*</span></label>
+                            <input type="date" id="fecha-inicio-trabajo-anterior" required>
+                            <small>Ejemplo: 2020-01-01</small>
+                        </div>
+                        <hr class="divider">
+
+                        <div>
+                            <label>Fecha Fin: <span class="required">*</span></label>
+                            <input type="date" id="fecha-fin-trabajo-anterior" required>
+                            <small>Ejemplo: 2021-12-31</small>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="single-line">
+                        <div>
+                            <label for="nombres">Nombre Jefe Inmediato:</label>
+                            <input type="text" id="nombres">
+                        </div>
+                    </div>
+                    <br>
+
+                    <hr class="divider">
+
+
+                    <button type="button" class="btn-atras" data-previous="seccion4">Atrás</button>
+
+                    <button type="button" class="btn-siguiente" data-next="seccion6">Siguiente</button>
+
+                </div>
+                <div id="seccion6" style="display: none;">
+                    <h3>Sección 6</h3>
+                    <!-- SECCION 6: Información de Contacto -->
+                    <h2>Datos De los Padres</h2>
+
+                    <div class="single-line">
+                        <div>
+                            <label>Nombre Completo del Padre:</label>
+                            <input type="text" id="nombre-Padre" placeholder="Nombre completo">
+                        </div>
+                    </div>
+
+                    <div class="single-line">
+
+                        <div>
+                            <label>Fecha Nacimiento del Padre:</label>
+                            <input type="date" id="fecha-nacimiento-Padre">
+                        </div>
+
+                        <hr class="divider">
+
+                        <div>
+
+                            <label>vive en Estados Unidos:</label>
+                            <div class="checkbox-group">
+                                <label><input type="radio" name="Padre-estado-usa" value="sí">Sí</label>
+                                <label><input type="radio" name="Padre-estado-usa" value="no">No</label>
+                            </div>
+                        </div>
+                        <hr class="divider">
+                    </div>
+                    <br>
+                    <hr class="divider">
+                    <hr class="divider">
+                    <br>
+
+                    <div class="single-line">
+                        <div>
+                            <label>Nombre Completo del Madre:</label>
+                            <input type="text" id="nombre-Madre" placeholder="Nombre completo">
+
+                        </div>
+                    </div>
+                    <div class="single-line">
+
+
+                        <div>
+                            <label>Fecha Nacimiento del Madre:</label>
+                            <input type="date" id="fecha-nacimiento-Madre">
+                        </div>
+                        <hr class="divider">
+
+                        <div>
+                            <label>vive en Estados Unidos:</label>
+                            <div class="checkbox-group">
+
+                                <label><input type="radio" name="Madre-estado-usa" value="sí">Sí</label>
+                                <label><input type="radio" name="Madre-estado-usa" value="no">No</label>
+                            </div>
+                        </div>
+
+                        <hr class="divider">
+                    </div>
+                    <br>
+
+                    <hr class="divider">
+
+
+                    <button type="button" class="btn-atras" data-previous="seccion5">Atrás</button>
+
+                    <button type="button" class="btn-siguiente" data-next="seccion7">Siguiente</button>
+                </div>
+
+                <div id="seccion7" style="display: none;">
+                    <h3>Sección 7</h3>
+                    <!-- SECCION 7: Información de Contacto -->
+                    <h2>Redes Sociales</h2>
+                    <h3>Por favor, proporciona los enlaces a tus perfiles de redes sociales si los</h3>
+                    <br>
+                    <hr class="divider">
+                    <br>
+
+
+
+                    <div class="form-item">
+
+                        <hr class="divider">
+
+
+                        <label>Facebook:</label>
+                        <input type="text" id="facebook" placeholder="facebook.com/tu-perfil">
+
+
+
+                    </div>
+                    <div class="form-item">
+
+                        <hr class="divider">
+
+
+                        <label for="twitter">Twitter:</label>
+                        <input type="text" id="twitter" name="twitter" placeholder="https://twitter.com/tu-perfil">
+
+
+                    </div>
+
+                    <div class="form-item">
+
+                        <hr class="divider">
+
+
+                        <label for="instagram">Instagram:</label>
+                        <input type="text" id="instagram" name="instagram"
+                            placeholder="https://instagram.com/tu-perfil">
+
+                    </div>
+                    <div class="form-item">
+                        <hr class="divider">
+
+
+
+
+                        <label for="linkedin">LinkedIn:</label>
+                        <input type="text" id="linkedin" name="linkedin"
+                            placeholder="https://linkedin.com/in/tu-perfil">
+
+                    </div>
+
+                    <hr class="divider">
+                    <br>
+
+                    <hr class="divider">
+
+
+                    <button type="button" class="btn-atras" data-previous="seccion6">Atrás</button>
+
+                    <button type="button" class="btn-siguiente" data-next="seccion8">Siguiente</button>
+                </div>
+                <div id="seccion8" style="display: none;">
+                    <h3>Sección 8</h3>
+                    <!-- SECCION 8: Información de Contacto -->
+                    <h2>Información A dicional</h2>
+
+                    <br>
+                    <div class="single-line">
+                        <div>
+                            <label for="duracion-usa">Tiene Familiares en Estados unidos?:</label>
+                            <select id="tiene-familiares-estados-unidos">
+                                <option value="dias"></option>
+                                <option value="dias">Si</option>
+                                <option value="meses">No</option>
+                            </select>
+
+
+                        </div>
+
+
+                        <hr class="divider">
+                        <div>
+                            <label for="duracion-usa">Han Intentado Anteriormente Tramitar la visa?:</label>
+                            <select id="han-intentado-anteriormente-tramitar-visa">
+                                <option value="dias"></option>
+                                <option value="dias">Si</option>
+                                <option value="meses">No</option>
+                            </select>
+
+
+                        </div>
+
+
+                        <hr class="divider">
+                        <div>
+                            <label for="duracion-usa">Han Estado en Esyados Unidos?:</label>
+                            <select id="han-estado-estados-unidos">
+                                <option value="dias"></option>
+                                <option value="dias">Si</option>
+                                <option value="meses">No</option>
+                            </select>
+
+
+                        </div>
+                    </div>
+
+
+                    <br>
+                    <div class="single-line">
+
+
+
+
+
+
+                        <div>
+                            <label for="duracion-usa">Han Viajado algun Pais en los Ultimos 5 años?:</label>
+                            <select id="han-viajado-algun-pais-ultimos-años">
+                                <option value="dias"></option>
+                                <option value="dias">Si</option>
+                                <option value="meses">No</option>
+                            </select>
+
+
+                        </div>
+                        <hr class="divider">
+
+
+
+
+                        <div>
+                            <label for="duracion-usa">Dominas el Ingles </label>
+                            <select id="dominas-ingles">
+                                <option value="dias"></option>
+                                <option value="dias">Si</option>
+                                <option value="meses">No</option>
+                            </select>
+                            <span>(**importante en caso de poner si, es
+                                probable
+                                parte
+                                de la entrevista sea en este idioma):</span>
+
+
+                        </div>
+                    </div>
+
+                    <br>
+                    <hr class="divider">
+
+                    <hr class="divider">
+
+                    <br>
+
+                    <div class="single-line">
+                        <div>
+                            <label>Nombre Completo de Familiar Cercano:</label>
+                            <input type="text" id="nombre-completo-familiar-cercano" placeholder="Nombre completo">
+                            <span>(Nombre Completo de Familiar Cercano, Unicamente Persona Legal)
+                        </div>
+
+
+
+                        <div>
+                            <label>Telefono de Familiar Cercano:</label>
+                            <input type="tel" id="telefono-familiar-cercano" placeholder="Numero de Telefno">
+                            <span>(Unicamente Persona Legal)
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <div class="single-line">
+
+                        <div>
+                            <label>Domicilio de Familiar Cercano: <span class="required">*</span></label>
+                            <input type="text" id="domicilio-familiar-cercano"
+                                placeholder="Calle Falsa 123, Ciudad, CP 45678" required>
+                            <small>Ejemplo: Calle Falsa 123, Ciudad, CP 45678</small>
+                        </div>
+                    </div>
+                    <br>
+
+                    <hr class="divider">
+                    <hr class="divider">
+                    <br>
+
+
+
+                    <button type="button" class="btn-atras" data-previous="seccion7">Atrás</button>
+
+                    <button type="button" class="btn-siguiente" data-next="seccion9">Siguiente</button>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div id="seccion9" style="display: none;">
+                    <h3>Sección 9</h3>
+                    <!-- SECCION 9: Documentación adjunta -->
+                    <h2>Documentación adjunta</h2>
+
+                    <br>
+
+
+
+
+
+                    <div class="form-item">
+                        <label for="documento-identidad">Adjuntar copia de documento de identidad:</label>
+                        <input type="file" id="documento-identidad" name="documento_identidad"
+                            accept=".pdf,.jpg,.jpeg,.png">
+                    </div>
+                    <div class="form-item">
+                        <label for="comprobante-domicilio">Adjuntar comprobante de domicilio:</label>
+                        <input type="file" id="comprobante-domicilio" name="comprobante_domicilio"
+                            accept=".pdf,.jpg,.jpeg,.png">
+                    </div>
+
+                    <br>
+
+                    <hr class="divider">
+                    <hr class="divider">
+                    <br>
+
+
+
+                    <button type="button" class="btn-atras" data-previous="seccion8">Atrás</button>
+
+
+
+
+                    </form>
+                    <button type="submit">Enviar</button>
+                    <!-- <button type="button" class="btn-siguiente" data-next="seccion10">Siguiente</button> -->
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tu Compañía. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js"></script>
+    <script src="script.js"></script>
+    <script src="scripts-tiposolicitud.js"></script>
+    <script src="script-selec.js"></script>
+    <script src="buttons-section.js"></script>
+</body>
+
+</html>
